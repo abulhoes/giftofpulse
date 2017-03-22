@@ -28,99 +28,66 @@ var blueLed1 = new five.Led("13");
 var redLed1 = new five.Led("5");
 var blueLed2 = new five.Led("3");
 var redLed2 = new five.Led("6");
+var count = 0;
+var touch = new five.Button({
+  pin:9
+ 
+});
+// var touch2 = new five.Button({
+//   pin:10
 
-var touch = new five.Button(9)
-var touch2 = new five.Button(10);
+// });
 
-var touched1 = false;
-// var sensorThree = new five.Button()
-// var sensorFour = new five.Button()
 
-  touch.on("press", function(){
-    touched1 = true;
+console.log(count);
 
-    if(touched1 = true) {
+function increaseCount()
+{
+  count++;
+}
+
+function decreaseCount()
+{
+  count--;
+}
+
+  touch.on("down", function(){
+    increaseCount();
       redLed1.pulse();
       blueLed1.blink();
-    }
-       
+      display.innerHTML= count; 
   });
 
-  touch.on("release", function(){
-    touched1 = false;
+  touch.on("up", function(){
+    decreaseCount();
+
      blueLed1.stop();
       redLed1.stop();
       blueLed1.off();
        redLed1.off();
+       display.innerHTML = count;
   });
 
-  touch2.on("press", function(){
-    redLed2.pulse();
-    blueLed2.blink();
-     
-  });
+  // touch2.on("down", function(){
+  //   touched2 = 1;
+  //   increaseCount();
+  //   if(touched2 = 1){
+  //     redLed2.pulse();
+  //     blueLed2.blink();
+  //     display.innerHTML = count;
+  //   }   
+  // });
 
-  touch2.on("release", function(){
-     blueLed2.stop();
-      redLed2.stop();
-      blueLed2.off();
-       redLed2.off();
-  });
+  // touch2.on("up", function(){
+  //   touched2 = 0;
+  //   decreaseCount();
+  //    blueLed2.stop();
+  //     redLed2.stop();
+  //     blueLed2.off();
+  //      redLed2.off();
+  //      display.innerHTML = count;
+  // });
 
-
-
-
-// if(sensorOne.value < 100 && sensorTwo.value < 100 && sensorThree.value < 100 && sensorfour.value < 100) { 
-//    display.innerHTML = "32 lives";
-// } else if(sensorOne.value < 100 && sensorTwo.value < 100 && sensorThree.value < 100 && sensorfour.value > 100) {
-//   display.innerHTML="24 Lives";
-// else if(sensorOne.value < 100 && sensorTwo.value < 100 && sensorThree.value > 100 && sensorfour.value < 100) {
-//   display.innerHTML="24 Lives";
-// }
-// else if(sensorOne.value < 100 && sensorTwo.value > 100 && sensorThree.value < 100 && sensorfour.value < 100) {
-//   display.innerHTML="24 Lives";
-// }
-// else if(sensorOne.value > 100 && sensorTwo.value < 100 && sensorThree.value < 100 && sensorfour.value < 100) {
-//   display.innerHTML="24 Lives";
-// }
-// else if(sensorOne.value < 100 && sensorTwo.value < 100 && sensorThree.value > 100 && sensorfour.value > 100) {
-//   display.innerHTML="16 Lives";
-// }
-// else if(sensorOne.value < 100 && sensorTwo.value > 100 && sensorThree.value > 100 && sensorfour.value < 100) {
-//   display.innerHTML="16 Lives";
-// }
-// else if(sensorOne.value > 100 && sensorTwo.value > 100 && sensorThree.value < 100 && sensorfour.value < 100) {
-//   display.innerHTML="16 Lives";
-
-// }
-// else if(sensorOne.value > 100 && sensorTwo.value < 100 && sensorThree.value < 100 && sensorfour.value > 100) {
-//   display.innerHTML="16 Lives";
-// }
-// else if(sensorOne.value > 100 && sensorTwo.value < 100 && sensorThree.value > 100 && sensorfour.value < 100) {
-//   display.innerHTML="16 Lives";
-// }
-// else if(sensorOne.value < 100 && sensorTwo.value > 100 && sensorThree.value < 100 && sensorfour.value > 100) {
-//   display.innerHTML="16 Lives";
-// }
-// if(sensorOne.value < 100 && sensorTwo.value > 100 && sensorThree.value > 100 && sensorfour.value > 100) { 
-//    display.innerHTML = "8 lives";
-// } 
-// if(sensorOne.value > 100 && sensorTwo.value < 100 && sensorThree.value > 100 && sensorfour.value > 100) { 
-//    display.innerHTML = "8 lives";
-// } 
-// if(sensorOne.value > 100 && sensorTwo.value > 100 && sensorThree.value < 100 && sensorfour.value > 100) { 
-//    display.innerHTML = "8 lives";
-// } 
-// if(sensorOne.value > 100 && sensorTwo.value > 100 && sensorThree.value > 100 && sensorfour.value < 100) { 
-//    display.innerHTML = "8 lives";
-// } 
-// } else {
-//   display.innerHTML="";
-// }
-
-
-
-//});//closing sensorOne
 
 
 
