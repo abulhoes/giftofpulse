@@ -79,19 +79,9 @@ var touch3 = new five.Button();
 
 
 
-if(touch.value = && touch2.value = && touch3.value =) { 
-   display.innerHTML = "32 lives";
-} else if(touch.value = && touch2.value = && touch3.value =) {
+
+ if(touch.value = && touch2.value = && touch3.value =) {
   display.innerHTML="24 Lives";
-else if(touch.value = && touch2.value = && touch3.value =) {
-  display.innerHTML="24 Lives";
-}
-else if(touch.value = && touch2.value = && touch3.value =) {
-  display.innerHTML="24 Lives";
-}
-else if(touch.value = && touch2.value = && touch3.value =) {
-  display.innerHTML="24 Lives";
-}
 else if(touch.value = && touch2.value = && touch3.value =) {
   display.innerHTML="16 Lives";
 }
@@ -102,27 +92,17 @@ else if(touch.value = && touch2.value = && touch3.value =) {
   display.innerHTML="16 Lives";
 
 }
-else if(touch.value && touch2.value && touch3.value) {
-  display.innerHTML="16 Lives";
-}
-else if(touch.value && touch2.value && touch3.value) {
-  display.innerHTML="16 Lives";
-}
-else if(touch.value && touch2.value && touch3.value) {
-  display.innerHTML="16 Lives";
-}
-if(touch.value && touch2.value && touch3.value) { 
+
+else if(touch.value && touch2.value && touch3.value) { 
    display.innerHTML = "8 lives";
 } 
-if(touch.value && touch2.value && touch3.value) { 
+else if(touch.value && touch2.value && touch3.value) { 
    display.innerHTML = "8 lives";
 } 
-if(touch.value && touch2.value && touch3.value) { 
+else if(touch.value && touch2.value && touch3.value) { 
    display.innerHTML = "8 lives";
 } 
-if(touch.value && touch2.value && touch3.value) { 
-   display.innerHTML = "8 lives";
-} 
+
 } else {
   display.innerHTML="";
 }
