@@ -29,25 +29,32 @@ var redLed1 = new five.Led("5");
 var blueLed2 = new five.Led("3");
 var redLed2 = new five.Led("6");
 
-var touch = new five.Button(9);
+var touch = new five.Button(9)
 var touch2 = new five.Button(10);
+
+var touched1 = false;
 // var sensorThree = new five.Button()
 // var sensorFour = new five.Button()
 
-  touch.on("hold", function(){
-    redLed1.pulse();
-    blueLed1.blink();
-     
+  touch.on("press", function(){
+    touched1 = true;
+
+    if(touched1 = true) {
+      redLed1.pulse();
+      blueLed1.blink();
+    }
+       
   });
 
   touch.on("release", function(){
+    touched1 = false;
      blueLed1.stop();
       redLed1.stop();
       blueLed1.off();
        redLed1.off();
   });
 
-  touch2.on("hold", function(){
+  touch2.on("press", function(){
     redLed2.pulse();
     blueLed2.blink();
      
