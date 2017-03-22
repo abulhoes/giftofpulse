@@ -9,7 +9,7 @@ app.on('ready', function () {
     resizable: false,
     title: 'j5/electron template',
     width: 595,
-	frame: false
+  frame: false
   });
 
   mainWindow.loadURL('file://' + __dirname + '/app/index.html');
@@ -18,3 +18,4 @@ app.on('ready', function () {
     mainWindow = null;
   });
 });
+
