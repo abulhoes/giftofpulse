@@ -17,77 +17,108 @@ process.__defineGetter__('stdin', function() {
   return process.__stdin
 });
 
-
 var board = new five.Board();
 
-board.on("ready", function()  {
+ board.on("ready", function()  {
 
 var display = document.querySelector("#display");
 
-var blueLed1 = new five.Led("13");
-var redLed1 = new five.Led("5");
-var blueLed2 = new five.Led("3");
-var redLed2 = new five.Led("6");
-var count = 0;
-var touch = new five.Button({
-  pin:9
- 
+//==========Sensor 1 Variables============//
+
+var sensorOne = new five.Sensor({
+   pin:"A0",
+   freq:250
+ });
+var led = new five.Led("11");
+var led2 = new five.Led("6");
+
+//==========Sensor 2 Variables============//
+
+var sensorTwo = new five.Sensor({
+   pin:"A2",
+   freq:250
+ });
+var led3 = new five.Led("10");
+var led4 = new five.Led("9");
+
+//==========Sensor 3 Variables============//
+
+var sensorThree = new five.Sensor({
+   pin:"A4",
+   freq:250
+ });
+var led5 = new five.Led("5");
+var led6 = new five.Led("3");
+
+//==========Methods============//
+
+sensorOne.on("change", function(){
+  console.log(this.value);
+  if(sensorOne.value < 100){
+    led.pulse();
+    led2.blink(); 
+  } else {
+    led.off();
+    led2.off(); 
+    led.stop();
+    led2.stop();
+  }
+
+sensorTwo.on("change", function(){
+  console.log(this.value);
+  if(sensorTwo.value < 100){
+    led3.pulse();
+    led4.blink(); 
+  } else {
+    led3.off();
+    led4.off(); 
+    led3.stop();
+    led4.stop();
+  }
 });
-// var touch2 = new five.Button({
-//   pin:10
 
-// });
+sensorThree.on("change", function(){
+  console.log(this.value);
+  if(sensorThree.value < 100){
+    led5.pulse();
+    led6.blink(); 
+  } else {
+    led5.off();
+    led6.off(); 
+    led5.stop();
+    led6.stop();
+  }
+});
 
+//==========Display Messages If Statments============//
 
-console.log(count);
-
-function increaseCount()
-{
-  count++;
+if(sensorOne.value < 100 && sensorTwo.value < 100 && sensorThree.value < 100) { 
+   display.innerHTML = "24 lives";
+} 
+else if(sensorOne.value < 100 && sensorTwo.value < 100  && sensorThree.value > 100) {
+  display.innerHTML="16 Lives";
+} 
+else if(sensorOne.value > 100 && sensorTwo.value < 100  && sensorThree.value < 100) {
+  display.innerHTML="16 Lives";
+} 
+else if(sensorOne.value < 100 && sensorTwo.value > 100  && sensorThree.value < 100) {
+  display.innerHTML="16 Lives";
+}  
+else if(sensorOne.value < 100 && sensorTwo.value > 100  && sensorThree.value > 100) {
+  display.innerHTML="8 Lives";
+} 
+else if(sensorOne.value > 100 && sensorTwo.value > 100  && sensorThree.value < 100) {
+  display.innerHTML="8 Lives";
+} 
+else if(sensorOne.value > 100 && sensorTwo.value < 100  && sensorThree.value > 100) {
+  display.innerHTML="8 Lives";
+}
+else {
+  display.innerHTML="";
 }
 
-function decreaseCount()
-{
-  count--;
-}
 
-  touch.on("down", function(){
-    increaseCount();
-      redLed1.pulse();
-      blueLed1.blink();
-      display.innerHTML= count; 
-  });
-
-  touch.on("up", function(){
-    decreaseCount();
-
-     blueLed1.stop();
-      redLed1.stop();
-      blueLed1.off();
-       redLed1.off();
-       display.innerHTML = count;
-  });
-
-  // touch2.on("down", function(){
-  //   touched2 = 1;
-  //   increaseCount();
-  //   if(touched2 = 1){
-  //     redLed2.pulse();
-  //     blueLed2.blink();
-  //     display.innerHTML = count;
-  //   }   
-  // });
-
-  // touch2.on("up", function(){
-  //   touched2 = 0;
-  //   decreaseCount();
-  //    blueLed2.stop();
-  //     redLed2.stop();
-  //     blueLed2.off();
-  //      redLed2.off();
-  //      display.innerHTML = count;
-  // });
-
+});//closing sensorOne
 
 
 
