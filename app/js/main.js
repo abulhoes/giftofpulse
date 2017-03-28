@@ -30,7 +30,7 @@ var sensorOne = new five.Sensor({
    freq:250
  });
 var led = new five.Led("11");
-var led2 = new five.Led("6");
+var led2 = new five.Led("10");
 
 //==========Sensor 2 Variables============//
 
@@ -38,7 +38,7 @@ var sensorTwo = new five.Sensor({
    pin:"A2",
    freq:250
  });
-var led3 = new five.Led("10");
+var led3 = new five.Led("6");
 var led4 = new five.Led("9");
 
 //==========Sensor 3 Variables============//
@@ -63,6 +63,9 @@ sensorOne.on("change", function(){
     led.stop();
     led2.stop();
   }
+
+
+
 
 sensorTwo.on("change", function(){
   console.log(this.value);
@@ -117,10 +120,7 @@ else {
   display.innerHTML="";
 }
 
-
 });//closing sensorOne
-
-
 
 });//closing board 
 
