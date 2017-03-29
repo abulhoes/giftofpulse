@@ -28,22 +28,22 @@ var count1 = 0;
 var count2 = 0;
 var count3 = 0;
 var count;
+var loop;
+
 strip = new pixel.Strip({
         board: this,
         controller: "FIRMATA",
-        strips: [ {pin: 2, length: 30}, ], // this is preferred form for definition
+        strips: [ {pin: 6, length: 30}, ], // this is preferred form for definition
         gamma: 2.8, // set to a gamma that works nicely for WS2812
     });
 
 strip.on("ready", function() {
         console.log("Strip ready, let's go");
-
 });
 
 
 function  callLedStrip() {
-  console.log("Working!!");
-    // Set the entire strip to pink.
+    //Set the entire strip to pink.
     strip.color('#ff0000');
     // Set first and seventh pixels to turquoise.
     strip.pixel(0).color('#0029ff');
@@ -53,13 +53,31 @@ function  callLedStrip() {
 
     // Loop the following command forever
     // at 12fps until Arduino powers down.
-    var loop = setInterval(function () {
-      // Shift all pixels clockwise
+    loop = setInterval(function () {
+      //strip.color("#000"); // blanks it out
       strip.shift(1, pixel.FORWARD, true);
       strip.show();
-    }, 2000 / 12);
+    }, 1000/12);
+
+    // var pos = 0;
+    // var colors = ["red", "blue", "cyan", "magenta"];
+    // var current_color = 0;
+
+    // var blinker = setInterval(function() {
+
+        
+
+    //     if (++pos >= strip.length) {
+    //         pos = 0;
+    //         if (++current_color>= colors.length) current_color = 0;
+    //     }
+    //     strip.pixel(pos).color(colors[current_color]);
+
+    //     strip.show();
+    // }, 1000/2);
  
 };
+
 
 //==========Sensor 1 Variables============//
 
@@ -67,7 +85,7 @@ var sensorOne = new five.Sensor({
    pin:"A0",
    freq:250
  });
-var led1 = new five.Led("11");
+//var led1 = new five.Led("11");
 
 //==========Sensor 2 Variables============//
 
@@ -75,7 +93,7 @@ var sensorTwo = new five.Sensor({
    pin:"A2",
    freq:250
  });
-var led2 = new five.Led("6");
+//var led2 = new five.Led("3");
 
 //==========Sensor 3 Variables============//
 
@@ -83,17 +101,16 @@ var sensorThree = new five.Sensor({
    pin:"A4",
    freq:250
  });
-var led3 = new five.Led("5");
+//var led3 = new five.Led("5");
 
 //==========Methods============//
 
 sensorOne.on("change", function(){
   if(sensorOne.value < 60){
-    led1.pulse();
+    //led1.on();
     count1 = 1;
   } else {
-    led1.off();
-    led1.stop();
+    //led1.off();
     count1 = 0;
   }
 
@@ -101,12 +118,10 @@ sensorOne.on("change", function(){
 sensorTwo.on("change", function(){
  // console.log(count);
   if(sensorTwo.value < 60){
-    led2.pulse();
-   
+   // led2.on();
     count2 = 1;
   } else {
-    led2.off(); 
-    led2.stop();
+   // led2.off(); 
     count2 = 0;
   }
 });
@@ -114,11 +129,10 @@ sensorTwo.on("change", function(){
 sensorThree.on("change", function(){
   //console.log(count);
   if(sensorThree.value < 60){
-    led3.pulse();
+   // led3.on();
     count3 = 1; 
   } else {
-    led3.off();
-    led3.stop();
+  //  led3.off();
     count3 = 0;
   }
 });
