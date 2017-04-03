@@ -23,6 +23,8 @@ var board = new five.Board();
  board.on("ready", function()  {
 
 var display = document.querySelector("#display");
+var instructions = document.querySelector("#instructions");
+var instructions2 = document.querySelector("#instruction2");
 
 var count1 = 0;
 var count2 = 0;
@@ -106,6 +108,7 @@ var sensorThree = new five.Sensor({
 //==========Methods============//
 
 sensorOne.on("change", function(){
+  console.log(this.value);
   if(sensorOne.value < 60){
     //led1.on();
     count1 = 1;
@@ -116,7 +119,7 @@ sensorOne.on("change", function(){
 
 
 sensorTwo.on("change", function(){
- // console.log(count);
+ console.log(this.value);
   if(sensorTwo.value < 60){
    // led2.on();
     count2 = 1;
@@ -127,7 +130,7 @@ sensorTwo.on("change", function(){
 });
 
 sensorThree.on("change", function(){
-  //console.log(count);
+  console.log(this.value);
   if(sensorThree.value < 60){
    // led3.on();
     count3 = 1; 
@@ -141,16 +144,24 @@ count = count1 + count2 + count3;
 //==========Display Messages If Statments============//
 
 if(count == 3){
-  display.innerHTML = "24 Lives";
+  display.innerHTML = "24";
+  instructions.innerHTML = "";
+  instructions2.innerHTML = "<h2>You can save many more lives by becoming an organ donor today.</h2>";
   callLedStrip();
 }else if(count == 2){
-  display.innerHTML = "16 Lives";
+  display.innerHTML = "16";
+  instructions.innerHTML = "";
+  instructions2.innerHTML = "<h2>You just need one more friend. You can do it!</h2>";
   strip.off();
 }else if(count == 1){
-  display.innerHTML = "8 Lives";
+  display.innerHTML = "8";
+  instructions.innerHTML = "";
+  instructions2.innerHTML = '<h2>Grab a friend to save more lives.</h2>';
   strip.off();
 }else{
   display.innerHTML = "";
+  instructions.innerHTML = "Touch a sensor to save a life!";
+  instructions2.innerHTML = "";
   strip.off();
 }
 
