@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+body{
+	background-image: -webkit-radial-gradient(circle farthest-corner, #CACFD2 0%, #fff 125%);
+ 	background-image: radial-gradient(circle farthest-corner,  #fff 0%, #CACFD2 125%);
+}
+
+.container-fluid{
+	text-align: center;
+}
+
+h1{
+	font-family: 'Helvetica', open-sans;
+	text-transform: uppercase;
+	margin-top: 50px;
+	font-weight: bold;
+	font-size: 60px;
+	color: black;
+}
+
+h2{
+	font-family: 'Helvetica', open-sans;
+}
+
+.one{
+	color: red;
+}
+
+.eight{
+	color: red;
+}
+
+#display{
+	font-family: Arial, open-sans;
+	font-size: 250px;
+	margin-top: -25px;
+	color: red;
+}
