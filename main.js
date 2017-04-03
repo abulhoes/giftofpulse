@@ -5,10 +5,10 @@ var mainWindow = null;
 
 app.on('ready', function () {
   mainWindow = new BrowserWindow({
-    height: 505,
+    height: 900,
     resizable: false,
     title: 'j5/electron template',
-    width: 595,
+    width: 900,
   frame: false
   });
 
