@@ -7,6 +7,7 @@ body{
 
 .container-fluid{
 	text-align: center;
+	margin: 70px;
 }
 
 h1{
@@ -35,4 +36,20 @@ h2{
 	font-size: 250px;
 	margin-top: -25px;
 	color: red;
+}
+
+#instructions{
+	font-family: 'Helvetica', open-sans;
+	text-transform: uppercase;
+	margin-top: 50px;
+	font-weight: bold;
+	font-size: 55px;
+	width: 600px;
+	padding: 40px;
+	margin: 0 auto;
+	color: black;
+}
+
+#instruction2{
+	font-family: 'Helvetica', open-sans;
 }
