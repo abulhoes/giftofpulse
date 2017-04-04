@@ -79,6 +79,7 @@ h2{
 	margin-top: -35px;
 	margin-left: -35px;
 	box-shadow: 0 0 0 rgba(169,50,38, 0.4);
+	-webkit-animation: heart 2s infinite;
   	animation: heart 2s infinite;
   	z-index: -1;
 }
@@ -95,6 +96,7 @@ h2{
 	border-radius: 50%;
 	background-color: #CB4335;
 	box-shadow: 0 0 0 rgba(169,50,38, 0.4);
+	-webkit-animation: heart 2s infinite;
 	animation: heart 2s infinite;
 }
 .heart-shape:before{
