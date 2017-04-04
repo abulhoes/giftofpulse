@@ -134,38 +134,31 @@ function heartShape(){
 //==========Display Messages If Statments============//
 
 if(count == 3){
-  display.innerHTML = "24";
+  display.innerHTML = "<span class='finalText'>24</span>";
   instructions.innerHTML = "";
-  instructions2.innerHTML = "<h2>You can save many more lives by becoming an organ donor today.</h2>";
+  instructions2.innerHTML = "<h2>You can save many more lives by becoming an organ donor today. <br/> Join at <span class='red'>beadonor.ca</span></h2>";
   callLedStrip();
   heartDisplay.innerHTML = "<div class='heart heart-shape'></div> <div class='heart heart-shape2'></div> <div class='heart heart-shape3'></div>";
-  //heartDisplay.style.visibility = "visible"; 
 }else if(count == 2){
   strip.off();
   display.innerHTML = "16";
   instructions.innerHTML = "";
   instructions2.innerHTML = "<h2>You just need one more friend. You can do it!</h2>";
-  heartDisplay.innerHTML = "";
-  //heartDisplay.style.visibility = "hidden";
+  heartDisplay.innerHTML = "<div class='heart heart-shape2'></div> <div class='heart heart-shape3'></div>";
   }else if(count == 1){
   strip.off();
   display.innerHTML = "8";
   instructions.innerHTML = "";
   instructions2.innerHTML = '<h2>Grab a friend to save more lives.</h2>';
-  heartDisplay.innerHTML = "";
- // heartDisplay.style.visibility = "hidden";
+  heartDisplay.innerHTML = "<div class='heart heart-shape3'></div>";
 }else{
   strip.off();
   display.innerHTML = "";
   instructions.innerHTML = "Touch a sensor to save a life!";
   instructions2.innerHTML = "";
   heartDisplay.innerHTML = "";
-  //heartDisplay.style.visibility = "hidden";
 }
 
 });//closing sensorOne
 
 });//closing board 
-
-// display();
-//  heartShape();

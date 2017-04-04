@@ -23,19 +23,15 @@ h2{
 	font-family: 'Helvetica', open-sans;
 }
 
-.one{
-	color: red;
-}
-
-.eight{
+.red{
 	color: red;
 }
 
 #display{
 	font-family: Arial, open-sans;
-	font-size: 250px;
+	font-size: 200px;
 	margin-top: -25px;
-	color: red;
+	color: black;
 }
 
 #instructions{
@@ -52,6 +48,7 @@ h2{
 
 #instruction2{
 	font-family: 'Helvetica', open-sans;
+	margin-top: 60px;
 }
 
 
@@ -74,8 +71,8 @@ h2{
 	transform: rotate(45deg);
 	background-color: rgba(250,184,66, 1);
 	position: absolute;
-	top:55%;
-	left: 45%;
+	top: 52%;
+	left: 42%;
 	background-color: #CB4335;
 	width: 200px;
 	height: 200px;
@@ -117,8 +114,8 @@ h2{
 	transform: rotate(45deg);
 	background-color: rgba(250,184,66, 1);
 	position: absolute;
-	top:55%;
-	left: 45%;
+	top: 52%;
+	left: 42%;
 	background-color: #F1948A;
 	width: 150px;
 	height: 150px;
@@ -156,14 +153,14 @@ h2{
 	transform: rotate(45deg);
 	background-color: rgba(250,184,66, 1);
 	position: absolute;
-	top:55%;
-	left: 45%;
+	top: 52%;
+	left: 42%;
 	background-color: #F5B7B1;
 	width: 100px;
 	height: 100px;
 	margin-top: 15px;
 	margin-left: 15px;
-	 z-index: -1;
+	z-index: -1;
 }
 
 .heart-shape3:before,
