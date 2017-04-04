@@ -64,24 +64,6 @@ function  callLedStrip() {
 
 };
 
-
-  //var tl = new TimelineMax({repeat:-1});
-
-
-  //tl.add(TweenMax.staggerFrom(hearts, 2,{
-    //scale: 0.5,
-    //opacity:0,
-    //delay:0.1,
-    //ease:Elastic.easeOut}, 0.2));
-
-  //tl.add(TweenMax.staggerTo(hearts, 2,{
-    //scale: 0.5,
-    //opacity:0,
-    //delay:0.1,
-    //ease:Elastic.easeIn}, 0.2));
-
-
-
 //==========Sensor 1 Variables============//
 
 var sensorOne = new five.Sensor({
