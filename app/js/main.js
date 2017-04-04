@@ -3,7 +3,6 @@ var Readable = require('stream').Readable
 var util = require('util');
 var five = require("johnny-five");
 var pixel = require("node-pixel");
-
 var strip = null;
 
 util.inherits(MyStream, Readable);  
@@ -140,18 +139,21 @@ if(count == 3){
   callLedStrip();
   heartDisplay.innerHTML = "<div class='heart heart-shape'></div> <div class='heart heart-shape2'></div> <div class='heart heart-shape3'></div>";
 }else if(count == 2){
+  clearInterval(loop);
   strip.off();
   display.innerHTML = "16";
   instructions.innerHTML = "";
   instructions2.innerHTML = "<h2>You just need one more friend. You can do it!</h2>";
   heartDisplay.innerHTML = "<div class='heart heart-shape2'></div> <div class='heart heart-shape3'></div>";
   }else if(count == 1){
+  clearInterval(loop);
   strip.off();
   display.innerHTML = "8";
   instructions.innerHTML = "";
   instructions2.innerHTML = '<h2>Grab a friend to save more lives.</h2>';
   heartDisplay.innerHTML = "<div class='heart heart-shape3'></div>";
 }else{
+  clearInterval(loop);
   strip.off();
   display.innerHTML = "";
   instructions.innerHTML = "Touch a sensor to save a life!";
