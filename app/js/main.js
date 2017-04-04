@@ -25,6 +25,8 @@ var board = new five.Board();
 var display = document.querySelector("#display");
 var instructions = document.querySelector("#instructions");
 var instructions2 = document.querySelector("#instruction2");
+var heartDisplay = document.querySelector(".heartCon");
+var hearts = document.querySelectorAll(".heart");
 
 var count1 = 0;
 var count2 = 0;
@@ -56,64 +58,58 @@ function  callLedStrip() {
     // Loop the following command forever
     // at 12fps until Arduino powers down.
     loop = setInterval(function () {
-      //strip.color("#000"); // blanks it out
       strip.shift(1, pixel.FORWARD, true);
       strip.show();
     }, 1000/12);
 
-    // var pos = 0;
-    // var colors = ["red", "blue", "cyan", "magenta"];
-    // var current_color = 0;
-
-    // var blinker = setInterval(function() {
-
-        
-
-    //     if (++pos >= strip.length) {
-    //         pos = 0;
-    //         if (++current_color>= colors.length) current_color = 0;
-    //     }
-    //     strip.pixel(pos).color(colors[current_color]);
-
-    //     strip.show();
-    // }, 1000/2);
- 
 };
+
+
+  //var tl = new TimelineMax({repeat:-1});
+
+
+  //tl.add(TweenMax.staggerFrom(hearts, 2,{
+    //scale: 0.5,
+    //opacity:0,
+    //delay:0.1,
+    //ease:Elastic.easeOut}, 0.2));
+
+  //tl.add(TweenMax.staggerTo(hearts, 2,{
+    //scale: 0.5,
+    //opacity:0,
+    //delay:0.1,
+    //ease:Elastic.easeIn}, 0.2));
+
 
 
 //==========Sensor 1 Variables============//
 
 var sensorOne = new five.Sensor({
    pin:"A0",
-   freq:250
+   freq:100
  });
-//var led1 = new five.Led("11");
 
 //==========Sensor 2 Variables============//
 
 var sensorTwo = new five.Sensor({
    pin:"A2",
-   freq:250
+   freq:100
  });
-//var led2 = new five.Led("3");
 
 //==========Sensor 3 Variables============//
 
 var sensorThree = new five.Sensor({
    pin:"A4",
-   freq:250
+   freq:100
  });
-//var led3 = new five.Led("5");
 
 //==========Methods============//
 
 sensorOne.on("change", function(){
   console.log(this.value);
   if(sensorOne.value < 60){
-    //led1.on();
     count1 = 1;
   } else {
-    //led1.off();
     count1 = 0;
   }
 
@@ -121,10 +117,8 @@ sensorOne.on("change", function(){
 sensorTwo.on("change", function(){
  console.log(this.value);
   if(sensorTwo.value < 60){
-   // led2.on();
     count2 = 1;
   } else {
-   // led2.off(); 
     count2 = 0;
   }
 });
@@ -132,37 +126,56 @@ sensorTwo.on("change", function(){
 sensorThree.on("change", function(){
   console.log(this.value);
   if(sensorThree.value < 60){
-   // led3.on();
     count3 = 1; 
   } else {
-  //  led3.off();
     count3 = 0;
   }
 });
 count = count1 + count2 + count3;
 
+var tl = new TimelineMax();
+
+function heartShape(){
+  tl.add(TweenMax.staggerFrom(hearts, 2,{
+    scale: 0.5,
+    opacity:0,
+    delay:0.1,
+    ease:Elastic.easeOut}, 0.2));
+
+  tl.add(TweenMax.staggerTo(hearts, 2,{
+    scale: 0.5,
+    opacity:0,
+    delay:0.1,
+    ease:Elastic.easeIn}, 0.2));
+}
+
 //==========Display Messages If Statments============//
 
 if(count == 3){
-  display.innerHTML = "24";
+  heartShape();
+ // display.innerHTML = "24";
   instructions.innerHTML = "";
   instructions2.innerHTML = "<h2>You can save many more lives by becoming an organ donor today.</h2>";
   callLedStrip();
+  heartDisplay.style.visibility = "visible"; 
 }else if(count == 2){
+  strip.off();
   display.innerHTML = "16";
   instructions.innerHTML = "";
   instructions2.innerHTML = "<h2>You just need one more friend. You can do it!</h2>";
+  heartDisplay.style.visibility = "hidden";
+  }else if(count == 1){
   strip.off();
-}else if(count == 1){
   display.innerHTML = "8";
   instructions.innerHTML = "";
   instructions2.innerHTML = '<h2>Grab a friend to save more lives.</h2>';
-  strip.off();
+  heartDisplay.style.visibility = "hidden";
 }else{
+  strip.off();
   display.innerHTML = "";
   instructions.innerHTML = "Touch a sensor to save a life!";
   instructions2.innerHTML = "";
-  strip.off();
+  heartDisplay.style.visibility = "hidden";
 }
 
 });//closing sensorOne
@@ -170,3 +183,4 @@ if(count == 3){
 });//closing board 
 
 // display();
+//  heartShape();
