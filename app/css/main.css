@@ -54,10 +54,7 @@ h2{
 	font-family: 'Helvetica', open-sans;
 }
 
-.heartCon{
-	z-index: 9999;
-	visibility: hidden;
-}
+
 
 /*-------------HEART CSS-------------*/
 .heart-shape{
