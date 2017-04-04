@@ -3,7 +3,7 @@
 
 body{
 
-	background-color: #EFA0A0;
+	
 }
 
 
@@ -17,7 +17,7 @@ body{
 	position: absolute;
 	top:50%;
 	left: 50%;
-	background-color: #24305E;
+	background-color: #CB4335;
 	width: 200px;
 	height: 200px;
 	margin-top: -35px;
@@ -34,7 +34,7 @@ body{
   -moz-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  background-color: #24305E;
+  background-color: #CB4335;
 }
 .heart-shape:before{
   bottom: 0px;
@@ -55,7 +55,7 @@ body{
 	position: absolute;
 	top:50%;
 	left: 50%;
-	background-color: #C4BEEE;
+	background-color: #F1948A;
 	width: 150px;
 	height: 150px;
 	margin-top: -10px;
@@ -72,7 +72,7 @@ body{
 	-moz-border-radius: 50%;
 	-o-border-radius: 50%;
 	border-radius: 50%;
-	background-color: #C4BEEE;
+	background-color: #F1948A;
 }
 .heart-shape2:before{
   bottom: 0px;
@@ -93,7 +93,7 @@ body{
 	position: absolute;
 	top:50%;
 	left: 50%;
-	background-color: #DCDDFC;
+	background-color: #F5B7B1;
 	width: 100px;
 	height: 100px;
 	margin-top: 15px;
@@ -110,7 +110,7 @@ body{
 	-moz-border-radius: 50%;
 	-o-border-radius: 50%;
 	border-radius: 50%;
-	background-color: #DCDDFC;
+	background-color: #F5B7B1;
 }
 .heart-shape3:before{
   bottom: 0px;
