@@ -53,3 +53,123 @@ h2{
 #instruction2{
 	font-family: 'Helvetica', open-sans;
 }
+
+.heartCon{
+	z-index: 9999;
+	visibility: hidden;
+}
+
+/*-------------HEART CSS-------------*/
+.heart-shape{
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	background-color: rgba(250,184,66, 1);
+	position: absolute;
+	top:50%;
+	left: 50%;
+	background-color: #CB4335;
+	width: 200px;
+	height: 200px;
+	margin-top: -35px;
+	margin-left: -35px;
+}
+
+.heart-shape:before,
+.heart-shape:after{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  content: '';
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #CB4335;
+}
+.heart-shape:before{
+  bottom: 0px;
+  left: -100px;
+}
+.heart-shape:after{
+  top: -100px;
+  right: 0px;
+}
+
+.heart-shape2{
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	background-color: rgba(250,184,66, 1);
+	position: absolute;
+	top:50%;
+	left: 50%;
+	background-color: #F1948A;
+	width: 150px;
+	height: 150px;
+	margin-top: -10px;
+	margin-left: -10px;
+}
+
+.heart-shape2:before,
+.heart-shape2:after{
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	content: '';
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	background-color: #F1948A;
+}
+.heart-shape2:before{
+  bottom: 0px;
+  left: -83px;
+}
+.heart-shape2:after{
+  top: -83px;
+  right: 0px;
+}
+
+.heart-shape3{
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	background-color: rgba(250,184,66, 1);
+	position: absolute;
+	top:50%;
+	left: 50%;
+	background-color: #F5B7B1;
+	width: 100px;
+	height: 100px;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+.heart-shape3:before,
+.heart-shape3:after{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	content: '';
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	background-color: #F5B7B1;
+}
+.heart-shape3:before{
+  bottom: 0px;
+  left: -50px;
+}
+.heart-shape3:after{
+  top: -50px;
+  right: 0px;
+}
